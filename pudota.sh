@@ -36,6 +36,7 @@ _colorized() {
 }
 
 backup() {
+    cd ~/.pudota
     chmod +x encrypt.sh backup.sh
 
     printf "Uploading scripts... \t"
@@ -58,7 +59,7 @@ backup() {
     echo ""
 
     printf "Downloading backup... \t"
-    #! echo "get backup.tar.gz.enc" | sftp -q "$TARGET_HOST" 2>&1 | grep -qv "sftp"
+    ! echo "get backup.tar.gz.enc" | sftp -q "$TARGET_HOST" 2>&1 | grep -qv "sftp"
     _pretty_ending
 
     printf "Cleaning up... \t\t"
